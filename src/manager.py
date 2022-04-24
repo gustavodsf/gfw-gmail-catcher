@@ -1,13 +1,12 @@
+import logging
 from os import getenv
-from src.download import Download
-from src.csv_file import CsvFile
 
+from src.csv_file import CsvFile
+from src.download import Download
 from src.gmail import Gmail
 
-import logging
 
 class Manager(object):
-
     def __init__(self, config):
         self.config = config
         self.mount()
@@ -16,7 +15,7 @@ class Manager(object):
         self.download = Download()
         self.csvFile = CsvFile()
 
-        self.logger = logging.getLogger('MANAGER')
+        self.logger = logging.getLogger("MANAGER")
         print("Read Config Params")
         self.logger.info("Read Config Params")
 
@@ -34,11 +33,13 @@ class Manager(object):
         print("Found {} csv files to download".format(len(urlList)))
         self.logger.info("Found {} csv files to download".format(len(urlList)))
         count = 1
-        #try:
+        # try:
         for url in urlList:
             content = self.download.getData(url)
-            file_name = '{}-{}'.format(count, self.config.get('file_name'))
-            self.csvFile.save(content, path=getenv('WRITE_PATH'), file_name=file_name)
+            file_name = "{}-{}".format(count, self.config.get("file_name"))
+            self.csvFile.save(
+                content, path=getenv("WRITE_PATH"), file_name=file_name
+            )
             print("fineshed capture the forest data")
             self.logger.info("fineshed capture the forest data")
             count += 1

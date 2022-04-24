@@ -6,4 +6,4 @@ requests
 pytz
 pre-commit
 python-dotenv
-playwright 
+playwright
