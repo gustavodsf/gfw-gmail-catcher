@@ -10,5 +10,5 @@ class Config(object):
         with open("config.json") as file:
             data = json.load(file)
         file.close()
-        self.logger.info("Success on reading configuration file.")
+        self.logger.info("Running code with following config {}".format(data))
         return data
