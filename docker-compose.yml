@@ -11,4 +11,4 @@ services:
       - PYTHON_ENV=dev
       - WRITE_PATH=/srv/src/data/
     volumes:
-      - /home/fx8300/data:/srv/src/data
+      - c:/Users/fredi/Desktop/ArcGIS/GLAD_Alerts:/srv/src/data
