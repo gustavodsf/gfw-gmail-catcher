@@ -1,6 +1,8 @@
 import logging
 import os
 
+import schedule
+
 from src.config import Config
 from src.manager import Manager
 
@@ -16,11 +18,10 @@ if __name__ == "__main__":
     )
 
     manager = Manager(configParams)
-    manager.run_capture()
 
-    """
-    schedule.every().day.at(configParams.get("exec_time")).do(manager.run_capture)
+    schedule.every().day.at(configParams.get("exec_time")).do(
+        manager.run_capture
+    )
 
     while True:
         schedule.run_pending()
-    """

@@ -33,16 +33,18 @@ class Manager(object):
         print("Found {} csv files to download".format(len(urlList)))
         self.logger.info("Found {} csv files to download".format(len(urlList)))
         count = 1
-        # try:
-        for url in urlList:
-            content = self.download.getData(url)
-            file_name = "{}-{}".format(count, self.config.get("file_name"))
-            self.csvFile.save(
-                content, path=getenv("WRITE_PATH"), file_name=file_name
+        try:
+            for url in urlList:
+                content = self.download.getData(url)
+                file_name = "{}-{}".format(count, self.config.get("file_name"))
+                self.csvFile.save(
+                    content, path=getenv("WRITE_PATH"), file_name=file_name
+                )
+                print("fineshed capture the forest data")
+                self.logger.info("fineshed capture the forest data")
+                count += 1
+        except:
+            print("Was not possible to download file from: {}".format(url))
+            self.logger.error(
+                "Was not possible to download file from: {}".format(url)
             )
-            print("fineshed capture the forest data")
-            self.logger.info("fineshed capture the forest data")
-            count += 1
-        # except:
-        #    print("Was not possible to download file from: {}".format(url))
-        #    self.logger.error("Was not possible to download file from: {}".format(url))
