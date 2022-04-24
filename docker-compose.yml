@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  web:
+    image: pymail-v4.0
+    container_name: pymail-v4.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHON_ENV=dev
+      - WRITE_PATH=/data/
+    volumes:
+      - /home/fx8300/data:/srv/src/data

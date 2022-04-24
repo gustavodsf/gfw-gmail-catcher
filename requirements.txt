@@ -1,0 +1,8 @@
+retry
+schedule
+beautifulsoup4
+html5lib
+requests
+pytz
+pre-commit
+python-dotenv
