@@ -2,13 +2,13 @@ version: '3.9'
 
 services:
   web:
-    image: pymail-v4.0
-    container_name: pymail-v4.0
+    image: gfw-gmail-catcher
+    container_name: gfw-gmail-catcher
     build:
       context: .
       dockerfile: Dockerfile
     environment:
       - PYTHON_ENV=dev
-      - WRITE_PATH=/data/
+      - WRITE_PATH=/srv/src/data/
     volumes:
       - /home/fx8300/data:/srv/src/data

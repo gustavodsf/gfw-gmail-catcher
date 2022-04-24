@@ -14,9 +14,12 @@ if __name__ == "__main__":
                         datefmt='%d/%m/%Y %I:%M:%S %p',
                         level=logging.INFO)
 
-    # manager = Manager(configParams)
+    manager = Manager(configParams)
+    manager.run_capture()
 
-    # schedule.every().day.at(configParams.get("exec_time")).do(manager.runCapture)
+    '''
+    schedule.every().day.at(configParams.get("exec_time")).do(manager.run_capture)
 
-    # while True:
-    #    schedule.run_pending()
+    while True:
+        schedule.run_pending()
+    '''

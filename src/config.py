@@ -10,5 +10,6 @@ class Config(object):
         with open("config.json") as file:
             data = json.load(file)
         file.close()
-        self.logger.info("Running code with following config {}".format(data))
+        print("Running code with following config {}".format(str(data)))
+        self.logger.info("Running code with following config {}".format(str(data)))
         return data

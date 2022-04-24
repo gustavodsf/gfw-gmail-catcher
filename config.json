@@ -1,8 +1,8 @@
 {
   "email_searched": "no-reply@globalforestwatch.org",
-  "exec_time": "16:20",
-  "file_name": "file",
-  "p_gmail": "iddngxorzflonwap",
-  "u_gmail": "gustavodsf1@gmail.com",
-  "find_word": "(.CSV)",
+  "exec_time": "14:25",
+  "file_name": "gfw_file",
+  "gmail_password": "iddngxorzflonwap",
+  "gmail_user": "gustavodsf1@gmail.com",
+  "find_word": "(.CSV)"
 }
